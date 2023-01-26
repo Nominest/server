@@ -15,6 +15,19 @@ app.listen(port, () => {
   console.log(`Server is starting in ${port} port`);
 });
 
+app.get("/reservations", (request, response) => {
+  console.log("huselt orj irlee orders");
+  response.status(200).json(orders);
+});
+app.get("/users", (request, response) => {
+  console.log("huselt orj irlee orders");
+  response.status(200).json(users);
+});
+app.get("/moderators", (request, response) => {
+  console.log("huselt orj irlee orders");
+  response.status(200).json(users);
+});
+
 const products = [
   { name: "iphone 14", price: 999 },
   { name: "iphone13", price: 800 },
@@ -665,5 +678,101 @@ const datas = [
     stock: 25,
     sale: 10,
     category: "appliances",
+  },
+];
+
+const orders = [
+  {
+    id: "#151515",
+    date: "2022.01.01",
+    phone: 99999999,
+    email: "nomin@gmail.com",
+    address: "HUD, 1r khoroo",
+    cnt: 3,
+    amount: 1234,
+    payment: "card",
+    status: "acitve",
+  },
+  {
+    id: "#151515",
+    date: "2022.01.01",
+    phone: 94567,
+    email: "nomin@gmail.com",
+    address: "HUD, 1r khoroo",
+    cnt: 3,
+    amount: 1234,
+    payment: "card",
+    status: "acitve",
+  },
+  {
+    id: "#151515",
+    date: "2022.01.01",
+    phone: 934567,
+    email: "nomin@gmail.com",
+    address: "HUD, 1r khoroo",
+    cnt: 3,
+    amount: 1234,
+    payment: "card",
+    status: "acitve",
+  },
+];
+
+const users = [
+  {
+    id: "#151515",
+    lastname: "Oyu",
+    name: "Nomin",
+    email: "nomin@gmail.com",
+    phone: 99999999,
+    date: "2022.01.01",
+    cnt: 2,
+  },
+  {
+    id: "#151545",
+    lastname: "Oyu",
+    name: "Nomin",
+    email: "bat@gmail.com",
+    phone: 8888888,
+    date: "2022.01.01",
+    cnt: 2,
+  },
+  {
+    id: "#15145465",
+    lastname: "Oyu",
+    name: "Nomin",
+    email: "bold@gmail.com",
+    phone: 6666666,
+    date: "2022.01.01",
+    cnt: 2,
+  },
+];
+
+const moderators = [
+  {
+    id: "#151515",
+    lastname: "Oyu",
+    name: "Nomin",
+    email: "nomin@gmail.com",
+    phone: 99999999,
+    date: "2022.01.01",
+    cnt: 2,
+  },
+  {
+    id: "#151545",
+    lastname: "Oyu",
+    name: "Nomin",
+    email: "bat@gmail.com",
+    phone: 8888888,
+    date: "2022.01.01",
+    cnt: 2,
+  },
+  {
+    id: "#15145465",
+    lastname: "Oyu",
+    name: "Nomin",
+    email: "bold@gmail.com",
+    phone: 6666666,
+    date: "2022.01.01",
+    cnt: 2,
   },
 ];
