@@ -1,6 +1,6 @@
-// import express from "express"
 const express = require("express");
 const cors = require("cors");
+const { response } = require("express");
 
 const app = express();
 const port = 2500;
@@ -11,18 +11,47 @@ app.get("/products", (request, response) => {
   response.status(200).json(datas);
 });
 
+app.get("product/:id", (req, res) => {
+  const prodId = req.params.id;
+  const foundProd = datas.find((product) => product.id === prodId);
+  if (foundProd) {
+    res.json(foundProd);
+  } else {
+    res.status(404).send({ message: "Product not found" });
+  }
+});
+
+app.post("/add", (request, response) => {
+  console.log("POST huselt orj irlee reqeust: ", request.body);
+  const newPorduct = {
+    id: (datas.length + 1).toString(),
+    ...request.body,
+  };
+  datas.push(newPorduct);
+  console.log("products: ", datas);
+});
+
 app.listen(port, () => {
   console.log(`Server is starting in ${port} port`);
+});
+
+app.delete("/product/:id", (req, res) => {
+  const id = req.params.id;
+  console.log("DELETE huselt orj ilee id: ", id);
+  products = datas.filter((product) => product.id !== id);
+  console.log("products: ", datas);
 });
 
 app.get("/reservations", (request, response) => {
   console.log("huselt orj irlee orders");
   response.status(200).json(orders);
 });
+
 app.get("/users", (request, response) => {
   console.log("huselt orj irlee orders");
   response.status(200).json(users);
 });
+
 app.get("/moderators", (request, response) => {
   console.log("huselt orj irlee orders");
   response.status(200).json(users);
@@ -33,14 +62,6 @@ const products = [
   { name: "iphone13", price: 800 },
 ];
 
-// app.get("/products", (request, response) => {
-//   console.log("huselt orj irlee");
-//   response.status(200).send("Hello World");
-// });
-// app.get("/products", (request, response) => {
-//   console.log("huselt orj irlee");
-//   response.status(200).send(products);
-// });
 const datas = [
   {
     description:
