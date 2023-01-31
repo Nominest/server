@@ -1,37 +1,63 @@
-// import express from "express"
 const express = require("express");
 const cors = require("cors");
-
+const bodyParser = require("body-parser");
 const app = express();
 const port = 2500;
 app.use(cors());
+app.use(bodyParser.json());
 
 app.get("/products", (request, response) => {
-  console.log("huselt orj irlee");
   response.status(200).json(datas);
+});
+
+app.get("/products/:id", (req, res) => {
+  const prodId = req.params.id;
+  const foundProduct = datas.find((product) => product.id === prodId);
+  if (foundProduct) {
+    res.json(foundProduct);
+  } else {
+    res.status(404).send({ message: "Product not found " });
+  }
+});
+
+app.post("/add", (req, res) => {
+  console.log("Post huselt orj irlee: ", req.body);
+  const newProduct = {
+    id: (datas.length + 1).toString(),
+    ...req.body,
+  };
+  datas.push(newProduct);
+});
+// app.get("/products", (request, response) => {
+//   console.log("huselt orj irlee");
+//   response.status(200).json(datas);
+// });
+
+app.delete("/products/:id", (req, res) => {
+  const id = req.params.id;
+  console.log("delete huselt", id);
+  datas = datas.filter((product) => product.id !== id);
+  console.log("datas", datas);
 });
 
 app.listen(port, () => {
   console.log(`Server is starting in ${port} port`);
 });
 
-app.get("/reservations", (request, response) => {
-  console.log("huselt orj irlee orders");
-  response.status(200).json(orders);
-});
-app.get("/users", (request, response) => {
-  console.log("huselt orj irlee orders");
-  response.status(200).json(users);
-});
-app.get("/moderators", (request, response) => {
-  console.log("huselt orj irlee orders");
-  response.status(200).json(users);
-});
+// app.get("/reservations", (request, response) => {
+//   console.log("huselt orj irlee orders");
+//   response.status(200).json(orders);
+// });
 
-const products = [
-  { name: "iphone 14", price: 999 },
-  { name: "iphone13", price: 800 },
-];
+// app.get("/users", (request, response) => {
+//   console.log("huselt orj irlee orders");
+//   response.status(200).json(users);
+// });
+
+// app.get("/moderators", (request, response) => {
+//   console.log("huselt orj irlee orders");
+//   response.status(200).json(users);
+// });
 
 // app.get("/products", (request, response) => {
 //   console.log("huselt orj irlee");
