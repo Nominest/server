@@ -59,14 +59,16 @@ app.listen(port, () => {
 //   response.status(200).json(users);
 // });
 
-// app.get("/products", (request, response) => {
-//   console.log("huselt orj irlee");
-//   response.status(200).send("Hello World");
+// app.get("/users", (request, response) => {
+//   console.log("huselt orj irlee orders");
+//   response.status(200).json(users);
 // });
-// app.get("/products", (request, response) => {
-//   console.log("huselt orj irlee");
-//   response.status(200).send(products);
+
+// app.get("/moderators", (request, response) => {
+//   console.log("huselt orj irlee orders");
+//   response.status(200).json(users);
 // });
+
 const datas = [
   {
     description:
