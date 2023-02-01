@@ -2,9 +2,10 @@ const express = require("express");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 const app = express();
-const port = 2500;
+const port = 2800;
 app.use(cors());
 app.use(bodyParser.json());
+const fs = require("fs");
 
 app.get("/products", (request, response) => {
   response.status(200).json(datas);
@@ -69,7 +70,7 @@ app.listen(port, () => {
 //   response.status(200).json(users);
 // });
 
-const datas = [
+let datas = [
   {
     description:
       "Customize a Samsung Bespoke 3- or 4-door French door refrigerator or 4-Door Flex refrigerator with panels available in multiple colors and finishes. Plus, shop for matching appliances.",
