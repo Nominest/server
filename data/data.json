@@ -32,35 +32,6 @@
     "category": "computers & tablets"
   },
   {
-    "description": "The iPad is a touchscreen tablet PC made by Apple . The original iPad debuted in 2010. Apple has three iPad product lines: iPad, iPad mini and iPad Pro. All models are available in silver, gray and gold. They run Apple's iOS mobile operating system and have Wi-Fi connectivity with optional 4G capabilities.",
-    "spec": [
-      { "display": "17^" },
-      { "resolution": "2360 x 1640" },
-      { "storage": "16gb" }
-    ],
-    "name": "iPad 10",
-    "id": "a4bbe60a",
-    "image": "https://pisces.bbystatic.com/image2/BestBuy_US/images/products/5200/5200904_sd.jpg;maxHeight=640;maxWidth=550",
-    "price": 599,
-    "stock": 13,
-    "sale": 0,
-    "category": "computers & tablets"
-  },
-  {
-    "description": "Air fryers have been on the market for more than a decade, and they've become a must-have for many home cooks. They're beloved for mimicking the results of deep frying without all the oil, and it's all thanks to their cooking mechanism. ",
-    "spec": [
-      { "capacity": "0.8 cubic feet" },
-      { "color": "Brushed Stainless Steel" }
-    ],
-    "name": "Air fryer",
-    "id": "e6518a42",
-    "image": "https://www.reliancedigital.in/medias/Philips-HD9270-70-Airfryer-492572874-i-1-1200Wx1200H?context=bWFzdGVyfGltYWdlc3w5NzgxODl8aW1hZ2UvcG5nfGltYWdlcy9oODIvaGYwLzk4NDMxMjUyNTYyMjIucG5nfDcyNmYyNzhkMzBhODM3YjgyNzAwZTU2OWU5YzdlYzcyZGY0ZjlmNDJlODk2MjAzMzMzNWIwYWYzZGU0NzY0MTc",
-    "price": 122,
-    "stock": 120,
-    "sale": 10,
-    "category": "appliances"
-  },
-  {
     "description": "Redmi Pad All in one, pad for fun 90Hz buttery smooth display High-performance MediaTek Helio G99 Long-lasting 8000mAh battery Flagship-level unibody design",
     "spec": [
       { "display": 10.61 },
@@ -550,24 +521,5 @@
     "stock": 25,
     "sale": 10,
     "category": "appliances"
-  },
-  { "price": "123", "name": "123", "description": "123" },
-  { "price": "123", "name": "123", "description": "123" },
-  { "price": "123", "name": "123", "description": "123" },
-  { "price": "", "name": "nomin", "description": "" },
-  { "price": "12", "name": "dv", "description": "sfbdfb" },
-  { "price": "323", "name": "dfb", "description": "bdgbdfb" },
-  {
-    "price": "439",
-    "name": "Redmi Pad",
-    "description": "Redmi Pad All in one, pad for fun 90Hz buttery smooth display High-performance MediaTek Helio G99 Long-lasting 8000mAh battery Flagship-level unibody design"
-  },
-  {
-    "price": "265",
-    "name": "HP Probook 430",
-    "description": "Touch Convertible Laptop AMD. 1 year Warranty. Free and fast delivery."
-  },
-  { "price": "12", "name": "", "description": "" },
-  { "price": "323", "name": "sdv", "description": "sfbdfb" },
-  { "price": "", "name": "nomin", "description": "" }
+  }
 ]
