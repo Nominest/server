@@ -26,11 +26,6 @@ app.post("/product/add", (req, res) => {
       res.status(500).send({ message: err });
     } else {
       const products = JSON.parse(data);
-      const newProduct = {
-        id: (data.length + 1).toString(),
-        ...req.body,
-      };
-      data.push(newProduct);
       products.push(req.body);
       fs.writeFile("./data/data.json", JSON.stringify(products), (err) => {
         if (err) {
@@ -61,6 +56,18 @@ app.delete("/products/:id", (req, res) => {
           res.status(200).send({ message: "Product added successfully" });
         }
       });
+    }
+  });
+});
+
+app.get("/reservations", (req, res) => {
+  console.log("get req avlaa in reservation");
+  fs.readFile("./data/data.json", (err, data) => {
+    if (err) {
+      res.status(500).send({ message: err });
+    } else {
+      const products = JSON.parse(data);
+      res.status(200).send(products);
     }
   });
 });
