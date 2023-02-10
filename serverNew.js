@@ -60,14 +60,14 @@ app.delete("/products/:id", (req, res) => {
   });
 });
 
-app.get("/reservations", (req, res) => {
-  console.log("get req avlaa in reservation");
-  fs.readFile("./data/data.json", (err, data) => {
+app.get("/orders", (req, res) => {
+  console.log("get req avlaa in orders");
+  fs.readFile("./data/orders.json", (err, data) => {
     if (err) {
       res.status(500).send({ message: err });
     } else {
-      const products = JSON.parse(data);
-      res.status(200).send(products);
+      const orders = JSON.parse(data);
+      res.status(200).send(orders);
     }
   });
 });
@@ -75,6 +75,19 @@ app.get("/reservations", (req, res) => {
 app.listen(port, () => {
   console.log(`Server is starting in ${port} port`);
 });
+
+//orders
+// app.get("/orders", (req, res) => {
+//   console.log(" orders get req avlaa");
+//   fs.readFile("./data/orders.json", (err, data) => {
+//     if (err) {
+//       res.status(500).send({ message: err });
+//     } else {
+//       const products = JSON.parse(data);
+//       res.status(200).send(products);
+//     }
+//   });
+// });
 //npm i random-id
 // app.get("/products", (request, response) => {
 //   console.log("huselt orj irlee");
