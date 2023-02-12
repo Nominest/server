@@ -62,12 +62,24 @@ app.delete("/products/:id", (req, res) => {
 
 app.get("/orders", (req, res) => {
   console.log("get req avlaa in orders");
-  fs.readFile("./data/orders.json", (err, data) => {
+  fs.readFile("./data/orders.json", (err, orders) => {
     if (err) {
       res.status(500).send({ message: err });
     } else {
-      const orders = JSON.parse(data);
-      res.status(200).send(orders);
+      const order = JSON.parse(orders);
+      res.status(200).send(order);
+    }
+  });
+});
+
+app.get("/moderators", (req, res) => {
+  console.log("get req avlaa in orders");
+  fs.readFile("./data/moderators.json", (err, orders) => {
+    if (err) {
+      res.status(500).send({ message: err });
+    } else {
+      const order = JSON.parse(orders);
+      res.status(200).send(order);
     }
   });
 });
