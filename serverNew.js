@@ -84,6 +84,45 @@ app.get("/moderators", (req, res) => {
   });
 });
 
+//dashboard products
+app.get("/home/products", (req, res) => {
+  console.log("get req avlaa dashboar products");
+  fs.readFile("./data/data.json", (err, data) => {
+    if (err) {
+      res.status(500).send({ message: err });
+    } else {
+      const products = JSON.parse(data);
+      res.status(200).send(products);
+    }
+  });
+});
+
+//dashboard user
+app.get("/home/user", (req, res) => {
+  console.log("get req avlaa dashboar user");
+  fs.readFile("./data/users.json", (err, data) => {
+    if (err) {
+      res.status(500).send({ message: err });
+    } else {
+      const user = JSON.parse(data);
+      res.status(200).send(user);
+    }
+  });
+});
+
+// //dashboard users
+// app.get("/home/users", (req, res) => {
+//   console.log("get req avlaa dashboar users");
+//   fs.readFile("./data/users.json", (err, data) => {
+//     if (err) {
+//       res.status(500).send({ message: err });
+//     } else {
+//       const user = JSON.parse(data);
+//       res.status(200).send(user);
+//     }
+//   });
+// });
+
 app.listen(port, () => {
   console.log(`Server is starting in ${port} port`);
 });
