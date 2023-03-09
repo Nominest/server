@@ -22,7 +22,7 @@ app.get("/allproducts", (req, res) => {
   });
 });
 
-app.post("/productadd", (req, res) => {
+app.post("/add", (req, res) => {
   console.log("Post huselt orj irlee:", req.body);
   fs.readFile("./data/be.json", (err, data) => {
     if (err) {
@@ -31,6 +31,26 @@ app.post("/productadd", (req, res) => {
       const products = JSON.parse(data);
       products.push(req.body);
       fs.writeFile("./data/be.json", JSON.stringify(products), (err) => {
+        if (err) {
+          res.status(500).send({ message: err });
+        } else {
+          res.status(200).send({ message: "Product added successfully" });
+        }
+      });
+    }
+  });
+});
+
+app.delete("/products/:id", (req, res) => {
+  const { id } = req.params;
+  console.log(id);
+  fs.readFile("./data/be.json", (err, data) => {
+    if (err) {
+      res.status(500).send({ message: err });
+    } else {
+      const products = JSON.parse(data);
+      const dataNew = products.filter((product) => product.id !== id);
+      fs.writeFile("./data/be.json", JSON.stringify(dataNew), (err) => {
         if (err) {
           res.status(500).send({ message: err });
         } else {
