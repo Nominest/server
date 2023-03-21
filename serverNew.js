@@ -1,11 +1,14 @@
 const express = require("express");
 let cors = require("cors");
+const multer = require("multer");
 const bodyParser = require("body-parser");
 const fs = require("fs");
+
 const app = express();
 const port = 2500;
 app.use(cors());
 app.use(bodyParser.json());
+const upload = multer({ dest: "uploads/" });
 
 app.get("/products", (req, res) => {
   console.log("get req avlaa");
