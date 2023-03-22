@@ -98,7 +98,7 @@ app.get("/home/user", (req, res) => {
   });
 });
 
-// //dashboard users
+// //dashbo  ard users
 // app.get("/home/users", (req, res) => {
 //   console.log("get req avlaa dashboar users");
 //   fs.readFile("./data/users.json", (err, data) => {
